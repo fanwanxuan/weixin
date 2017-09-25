@@ -1,0 +1,25 @@
+/*清除浮动*/
+.clearfix:after{display: block;height: 0;content: '';clear: both;}  
+/*垂直居中*/
+.displayTable{display: table;}
+.displayTable .teableCell{display: table-cell;vertical-align: middle;} 
+/* 头部-公共部分呢  */ 
+.Globals{height: 100%;background: #FFFFFF;font-size: 14px;}
+.health-top{position: relative;border-bottom: 1px solid #EDEEEF;height: 7%;padding: 0 4%;}
+.health-top .health-name{font-size: 16px;text-align: center;}
+.health-top .search-box, .health-top .health-name, .health-top .viewtype-switch{height: 100%;}
+.health-top .search-box{text-align: left;}
+.health-top .viewtype-switch{text-align: right;}
+
+
+
+
+
+
+
+
+
+
+
+
+

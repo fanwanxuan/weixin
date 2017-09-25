@@ -1,0 +1,26 @@
+<template>
+  <div class='institutionIF'>
+    <el-row :gutter="20">
+      <el-col :span="10">
+        <div class="grid-content bg-purple">所属区域 <i class='icon iconfont icon-icondown'></i></div>
+      </el-col>
+      <el-col :span="10">
+        <div class="grid-content bg-purple">医院性质<i class='icon iconfont icon-icondown'></i></div>
+      </el-col>
+    </el-row>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'InstitutionalList'
+}
+</script>
+<style>
+.institutionIF{
+position: absolute;
+    top: 0;
+    left: -2px;
+    right: -61px;
+}
+</style>
