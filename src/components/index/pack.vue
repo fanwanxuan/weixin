@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import homeMenu  from '../../assets/css/homeMenu/homeMenu.css'  //套餐css
 export default {
   name: 'pack',
   data() {

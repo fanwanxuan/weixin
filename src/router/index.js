@@ -10,17 +10,23 @@ import FillOrder from '@/components/order/FillOrder'
 import organizationDetail from '@/components/detail/organizationDetail'
 import PackageDetail from '@/components/detail/PackageDetail'
 import login from '@/components/login/login'
-
 import findPassword from '@/components/findPassword/findPassword'
-
+import register from '@/components/register/register'
+import myorder from '@/components/myorder/myorder'
+import archives from '@/components/archives/archives'
+import about from '@/components/about/about'
 Vue.use(Router)
 
 export default new Router({
     mode: 'history',
     routes: [{
             path: '/',
-            name: 'findPassword',
-            component: findPassword
+            name: 'myorder',
+            component: myorder
+        }, {
+            path: '/login',
+            name: 'login',
+            component: login
         },
         {
             path: '/index',
@@ -67,6 +73,21 @@ export default new Router({
             path: '/organizationDetail',
             name: 'organizationDetail',
             component: organizationDetail
+        },
+        {
+            path: '/register',
+            name: 'register',
+            component: register
+        },
+        {
+        	path: '/archives',
+            name: 'archives',
+            component: archives
+        },
+        {
+        	path: '/about',
+            name: 'about',
+            component: about
         }
     ]
 })

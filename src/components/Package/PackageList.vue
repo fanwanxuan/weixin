@@ -1,71 +1,125 @@
-
 <template>
-  <div class="Globals">
-    <el-row class="health-top">
+  <div class="packageL">
+    <!-- 头部 -->
+    <el-row class="packageL-top">
       <el-col :span="4" class="search-box displayTable">
         <p class="teableCell">
-          <span></span>
+          <i class="icon iconfont icon-sousuo-" style="font-size: 36px;"></i>
         </p>
       </el-col>
       <el-col :span="16" class="health-name displayTable">
-        <div class="grid-content bg-purple">
-          <el-tabs v-model="activeName" @tab-click="handleClick">
-            <el-tab-pane label="体检套餐" name="third">
-              <List></List>
-            </el-tab-pane>
-            <el-tab-pane label="体检机构" name="fourth">
-              <InstitutionalList></InstitutionalList>
-            </el-tab-pane>
-          </el-tabs>
-        </div>
+        <el-tabs v-model="activeName" @tab-click="handleClick" class='el-tabs-chongzhi'>
+          <el-tab-pane label="体检套餐" name="first">
+           <List></List>
+
+          </el-tab-pane>
+          <el-tab-pane label="体检机构" name="second">
+            <InstitutionalList></InstitutionalList>
+          </el-tab-pane>
+        </el-tabs>
       </el-col>
       <el-col :span="4" class="viewtype-switch displayTable">
-        <p class="teableCell">
-          <span></span>
+        <p class="teableCell" v-on:click="Switch"  style=' width:10px;   float: left;'>
+          <i class="icon iconfont iconSize " :class="[classObject.isActive ? classObject.iconList : classObject.iconApps]" style="font-size: 26px;"></i>
         </p>
       </el-col>
     </el-row>
+    <!-- 内容 -->
     <Foot></Foot>
   </div>
 </template>
 
 <script>
-import Foot from '../footer/footer'
+  import Foot from '../footer/footer.vue'
 import List from './packsList'
 import InstitutionalList from '../Institutional/InstitutionalList'
-export default {
-  name: 'packageList',
-  data() {
-    return {
-      activeName: 'third'
-    };
-  },
-  components: {
-    Foot,
-    List,
-    InstitutionalList
-  },
-  methods: {
-    handleClick(tab, event) {
-      console.log(tab, event);
+  export default {
+    name: 'packageList',
+    data() {
+      return {
+        activeName: 'first',
+        classObject: {
+          isActive: true,
+          iconList: 'icon-list',
+          iconApps: 'icon-apps',
+          hpList: 'hp-box-list',
+          hpNormal: 'hp-box-list-normal'
+        }
+      }
+    },
+    methods: {
+      Switch: function() {
+        this.classObject.isActive = this.classObject.isActive ? false : true;
+      },
+      handleClick(tab, event) {
+        console.log(tab, event);
+      }
+    },
+    components: {
+      Foot,List,InstitutionalList
     }
   }
-};
 </script>
-<style >
-.el-tabs__header {
-  border: none;
+
+<style scoped>
+.packageL{
+     border: 1px #f0f1f1 solid;
+    /* width: 100%; */
+    height: 50px;
+
 }
-	/* 设置默认值  */
-	.Globals{height: 100%;background: #FFFFFF;font-size: 14px;}
-	.health-top{position: relative;border-bottom: 1px solid #EDEEEF;text-align: center;font-size: 0.8rem;height: 8%;}
-	.health-top .health-name{font-size: 16px;}
-	.health-top .search-box, .health-top .health-name, .health-top .viewtype-switch{height: 100%;}
-	.health-top .search-box p span{display:block;width:100%;height:100%; background: url(../../assets/images/health/search.png)no-repeat center;background-size: 29%;}
-	.health-top .viewtype-switch p span{display:block;width:100%;height:100%; background: url(../../assets/images/health/qh1.png)no-repeat center;background-size: 32%;}
+  i {
+    font-style: normal;
+  }
+  img {
+    box-sizing: border-box;
+  }
+  .el-row {
+    margin-bottom: 0;
+  }
+/* 头部 */
+.packageL-top{
+  height:100%;
+  width:100%;
+  font-size:14px;
+}
+  /*垂直居中*/
+  .displayTable {
+    display: table;
+  }
+  .displayTable .teableCell {
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 50px;
+    margin-left: 18px;
+  }
+  /*样式一*/
+  .healthProduct-box {
+    position: relative;
+    padding: 1% 4%;
+    height: auto;
+    margin-bottom: 100px;
+  }
+  /*内容*/
+  .healthProduct-box .hp-box-list {
+    width: 49%;
+    float: left;
+    overflow: hidden;
+    padding-top: 2%;
+  }
+  .healthProduct-box .hp-box-list:nth-last-of-type(2n-1) {
+    margin-left: 2%;
+  }
+  .healthProduct-box .hp-box-list:nth-last-of-type(2n) {
+    margin-left: 0;
+  }
+  /* 先这样写 */
 
 
-	/*垂直居中*/
-	.displayTable{display: table;}
-	.displayTable .teableCell{display: table-cell;vertical-align: middle;}
+.el-tab-pane{
+    position: absolute;
+    width: 100%;
+    /* border: 1px red solid; */
+    left: 0;
+  }
 </style>

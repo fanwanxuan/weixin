@@ -126,7 +126,8 @@ import pack from './pack'
 import indexHeaderImg from '../../assets/index.png'
 import recommend from '../../assets/recommend.png'
 import hotBuy from '../../assets/hotBuy.png'
-import { showBack } from '../../conifg/common.js'
+import homeMenu  from '../../assets/css/homeMenu/homeMenu.css'  //套餐css
+import homeOrganization  from '../../assets/css/homeOrganization/homeOrganization.css'  //机构css
 
 export default {
   name: 'index',
@@ -171,6 +172,7 @@ export default {
     showBack() {
       let headerH = document.getElementsByClassName("headerTop")[0].offsetHeight;
         let scrollTop = document.body.scrollTop;
+        console.log(scrollTop);
         if (scrollTop > 15) {
           this.showColorStatus = true;
             if (scrollTop > headerH) {
@@ -257,11 +259,15 @@ export default {
   }
 }
 </script>
+<style scoped  >
+body,html,#app{
 
-<style>
+  border:1px red solid;
+}
+<style >
 /* 全局设置margin */
 
-.marginAll {
+ .marginAll {
   margin: 0!important;
 }
 
@@ -516,127 +522,11 @@ input {
 
 /* 体检套餐 */
 
-.tijain {
-  width: 100%;
-  height: 100%;
-  font-size: 17px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 30px;
-  letter-spacing: 0px;
-  color: #202121;
-}
-
-.more {
-  width: 100%;
-  height: 100%;
-  font-size: 12px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 30px;
-  letter-spacing: 0px;
-  color: #72797e;
-}
-
-.packageText {
-  width: 100%;
-  height: auto;
-}
-
-.packageTextHot,
-.packageTextHealthy {
-  display: block;
-}
-
-.packageTextHot {
-  height: 26px;
-  font-size: 14px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 30px;
-  letter-spacing: 0px;
-  color: #202121;
-}
-
-.packageTextHealthy {
-  height: 22px;
-  font-size: 14px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 30px;
-  letter-spacing: 0px;
-  color: #fe2d09;
-}
-
 
 /* 热门机构 */
 
-.examinationList {
-  height: 500px;
-}
 
-.examinationListImg {
-  height: 150px;
-}
-
-.examinationListImg img {
-  height: 100%;
-  background-size: 100%;
-}
-
-.examinationListAddress {
-  font-size: 12px;
-}
+</style>
 
 
-/* 性质 */
-
-.Nature {
-  width: 77px;
-  height: 19px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 30px;
-  letter-spacing: 0px;
-  padding: 2px 5px;
-  border-radius: 15px 15px 15px 15px;
-  border: solid 1px rgba(213, 213, 213, 1);
-}
-
-
-/* 公立三甲 */
-
-.orange {
-  color: #f09028;
-}
-
-
-/* 公立医院 */
-
-.green {
-  color: #0fcf14;
-}
-
-
-/* 私营医院 */
-
-.bule {
-  color: #06b2dd;
-}
-
-.address {
-  width: 125px;
-  height: 20px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 30px;
-  letter-spacing: 0px;
-  color: #a7acaf;
-}
 </style>

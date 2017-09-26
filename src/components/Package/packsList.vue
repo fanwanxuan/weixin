@@ -1,7 +1,6 @@
 <template>
   <div class='packIF'>
-
-    <el-row :gutter="20">
+    <el-row :gutter="20" class='marginAll'>
       <el-col :span="6">
         <div class="grid-content bg-purple">类别<i class='icon iconfont icon-icondown'></i></div>
       </el-col>
@@ -14,7 +13,6 @@
       <el-col :span="6">
         <div class="grid-content bg-purple">价格<i class='icon iconfont icon-icondown'></i></div>
       </el-col>
-       <hr/>
     </el-row>
        <pack></pack>
   </div>
@@ -22,6 +20,7 @@
 
 <script>
 import pack from '../index/pack'
+import homeMenu from '../../assets/css/homeMenu/homeMenu.css'
 export default {
   name: 'packList',
   components:{
@@ -30,15 +29,9 @@ export default {
 }
 </script>
 <style>
-
-.el-row {
-
+ .el-row {
     margin-bottom: 20px;
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-  }
+      }
   .el-col {
     border-radius: 4px;
   }
@@ -56,22 +49,16 @@ export default {
   }
 
   /* packIF */
-  .packIF{
+   .packIF{
     position: absolute;
     top: 0;
-    left: -44px;
-    right: -44px;
+    left:0;
+    right:0;
+    text-align:center;
   }
-  /* 水平线 */
-  hr{
-     border-color:#e2e4e5;
-     margin-left: -5px;
-     width: 103%;
-}
-
 
   /* active */
-  .el-tabs__item.is-active {
+   .el-tabs__item.is-active {
     color: #202121;
 }
 .el-tabs__active-bar {
@@ -84,5 +71,42 @@ export default {
     z-index: 1;
     transition: transform .3s cubic-bezier(.645,.045,.355,1);
     list-style: none;
+}
+  /* 重置element样式 */
+  /* .packTab {
+    padding: 0 29px;
+    height: 50px;
+    box-sizing: border-box;
+    line-height: 46px;
+    display: inline-block;
+    list-style: none;
+    font-size: 14px;
+    color: #a7acaf;
+    position: relative;
+} */
+   .el-tabs__content {
+    overflow: inherit!important;
+    position: static!important;
+
+  }
+   .el-tabs-chongzhi .el-tabs__header {
+   border-bottom:none!important;
+  }
+  .el-tabs__active-bar{
+        position: absolute;
+    bottom: 0;
+    left: 41px;
+    background-color: #1bb3f5;
+}
+/* 调样式 */
+.el-tabs__nav,.el-tabs__header{
+
+  width:100%;
+  text-align:center;
+}
+.el-tabs__item{
+  width:50%;
+  padding:0;
+  font-size:17px;
 }
 </style>

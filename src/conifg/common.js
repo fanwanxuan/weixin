@@ -24,6 +24,7 @@ export const destroyStore = (name) => {
  * 显示返回顶部按钮，开始、结束、运动 三个过程中调用函数判断是否达到目标点
  */
 export const showBack = callback => {
+
     let requestFram;
     let oldScrollTop;
 
@@ -57,7 +58,7 @@ export const showBack = callback => {
 
     //判断是否达到目标点
     const showBackFun = () => {
-        if (document.body.scrollTop > 500) {
+        if (document.body.scrollTop > 100) {
             callback(true);
         } else {
             callback(false);

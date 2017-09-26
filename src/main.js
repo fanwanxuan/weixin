@@ -27,8 +27,8 @@ Vue.use(ElementUI)
 Validator.addLocale(zhMessages)
     //公共定义的东西
 Vue.prototype.imgUrlS = "http://img.yeafon.com"
-Vue.prototype.fytjURL = "http://www.yeafon.com/"
-    // Vue.prototype.fytjURL = "http://192.168.0.116:8080/yftj-web/"
+    // Vue.prototype.fytjURL = "http://www.yeafon.com/"
+Vue.prototype.fytjURL = "http://192.168.0.116:8080/yftj-web/"
     //配置
 Vue.config.productionTip = false
 Vue.config.devtools = true

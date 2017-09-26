@@ -7,8 +7,8 @@
 			<el-row class="personal-name common-bg">
 				<el-col :span="10" class="head-img">
 					<div class="head-img-box xym_headImg">
-						<img src="../../assets/images/personalCenter/goods.png"/> 
-					</div> 
+						<img src="../../assets/images/personalCenter/goods.png"/>
+					</div>
 				</el-col>
 				<el-col :span="14" class="head-name">
 					<span>婷婷123</span>
@@ -61,18 +61,18 @@
 					<el-col :span="5" class="info-list-icon">
 						<img src="../../assets/images/personalCenter/personal-data.png" />
 					</el-col>
-					<el-col :span="17" class="info-list-name"><span>个人资料</span></el-col>
+					<el-col :span="17" class="info-list-name textLeft" ><span>个人资料</span></el-col>
 					<el-col :span="2" class="info-list-right">
 						<img src="../../assets/images/personalCenter/icon_arrow-right.png" />
 					</el-col>
 				</router-link>
 			</el-row>
 			<el-row class="common-bg info-list">
-				<router-link to="">
+				<router-link to="/archives">
 					<el-col :span="5" class="info-list-icon">
 						<img src="../../assets/images/personalCenter/Health-records.png" />
 					</el-col>
-					<el-col :span="17" class="info-list-name"><span>我的健康档案</span></el-col>
+					<el-col :span="17" class="info-list-name textLeft"><span>我的健康档案</span></el-col>
 					<el-col :span="2" class="info-list-right">
 						<img src="../../assets/images/personalCenter/icon_arrow-right.png" />
 					</el-col>
@@ -83,37 +83,38 @@
 					<el-col :span="5" class="info-list-icon">
 						<img src="../../assets/images/personalCenter/Account-security.png" />
 					</el-col>
-					<el-col :span="17" class="info-list-name"><span>账户安全</span></el-col>
+					<el-col :span="17" class="info-list-name textLeft"><span>账户安全</span></el-col>
 					<el-col :span="2" class="info-list-right">
 						<img src="../../assets/images/personalCenter/icon_arrow-right.png" />
 					</el-col>
 				</router-link>
 			</el-row>
 
-		</div> 
+		</div>
      <Foot></Foot>
 	</div>
 </template>
 
-<script> 
-import Foot from '../footer/footer.vue' 
+<script>
+import Foot from '../footer/footer.vue'
 export default {
 	name: 'personalCenter',
 	data(){
 		return{}
-	}, 
+	},
 	components:{
 	  Foot
 	},
-	mounted:function(){ 
+	mounted:function(){
 		/* 头像宽等于高*/
 		 var headImg_Height = document.getElementsByClassName('xym_headImg')[0].clientHeight;
 		 document.getElementsByClassName('xym_headImg')[0].style.width = headImg_Height+'px';
 	}
-}  
-</script> 
+}
+</script>
 
-<style scoped> 
+<style scoped>
+	.el-row {margin-bottom: 0;}
 	body{background: #F0F1F1;}
 	/* Globals */
 	.Globals{position: relative;height: 100%; background: #F0F1F1;}
@@ -121,7 +122,7 @@ export default {
 	.Globals .top-bg{position: relative; width: 100%;height: auto;}
 	.Globals .top-bg img{width: 100%;}
 	/* Globals => personal-box */
-	.personal-box{position: relative;z-index:5;top: -12%;padding: 0 5%;width:100%;height:20%;}
+	.personal-box{position: relative;z-index:5;top: -15%;padding: 0 5%;width:100%;height:20%;}
 	.personal-box .common-bg{border-radius: 5px;background: #FFFFFF;}
 	/* Globals => personal-box => personal-name*/
 	.personal-box .personal-name{padding: 20px 0;height:100%;}
@@ -150,5 +151,8 @@ export default {
 	.personal-box .info-list .info-list-name span{display: table-cell;vertical-align: middle;}
 	.personal-box .info-list .info-list-right{height: 100%;text-align: center;}
 	.personal-box .info-list .info-list-right img{height: 20%;margin-top: 81%;}
-
+/* 文字局座 */
+.textLeft{
+  text-align: left;
+}
 </style>
